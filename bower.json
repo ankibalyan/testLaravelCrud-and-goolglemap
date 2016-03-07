@@ -1,0 +1,21 @@
+{
+  "name": "testLaravelCrud",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Ankit Balyan <ankit.kr.balyan@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ankibalyan/testLaravelCrud-and-goolglemap",
+  "moduleType": [
+    "globals"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}

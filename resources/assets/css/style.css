@@ -1,0 +1,12 @@
+footer.page-footer {
+    padding-top: 0;
+    margin-top: 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.map-wrapper{
+	width: 90%;
+	height: 500px;
+	margin: 20px auto; 
+}

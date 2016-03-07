@@ -12,5 +12,18 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+    mix.sass([
+    	'../bower/Materialize/sass/materialize.scss',
+    	'app.scss'
+    ],'public/assets/css/app.css');
+
+    mix.styles([
+    	'style.css'
+    ],'public/assets/css/vendor.css');
+
+    mix.scripts([
+	    '../bower/jquery/dist/jquery.min.js',
+	    '../bower/Materialize/dist/js/materialize.min.js',
+	    'main.js'
+	], 'public/assets/js/vendor.js');
 });
