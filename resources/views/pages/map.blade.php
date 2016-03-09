@@ -15,13 +15,13 @@
     $( document ).ready(function(){
 		(function(window, google) {
 			var mapOpt = {
-				center: {lat: 51.503,lng: -0.127},
-				zoom: 10,
+				center: new google.maps.LatLng(28.751893, 77.058588),
+				zoom: 12,
 				disableDefaultUI: false,
 				scrollwheel: false,
 				draggable: true,
 				mapTypeId: google.maps.MapTypeId.ROADMAP,
-				maxZoom: 12,
+				maxZoom: 18,
 				minZomm:8,
 				zoomControlOptions:{
 					position: google.maps.ControlPosition.BOTTOM_LEFT,
@@ -32,9 +32,32 @@
 				}
 			}
 
+		    var locations = [
+		    @foreach ($academics as $academic)
+		      ['{{$academic->academic_name}}', {{$academic->latitude}}, {{$academic->longitude}}, true],
+		    @endforeach
+		    ];
+
 			mapElem = document.getElementById('map-canvas');
 			map = new google.maps.Map(mapElem, mapOpt);
-			map.addMarker(51.503,-0.127, true);
+
+		    var infowindow = new google.maps.InfoWindow();
+		    var marker, i;
+
+		    for (i = 0; i < locations.length; i++) {  
+		      marker = new google.maps.Marker({
+		        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+		        map: map
+		      });
+
+
+		      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+		        return function() {
+		          infowindow.setContent(locations[i][0]);
+		          infowindow.open(map, marker);
+		        }
+		      })(marker, i));
+		    }
 		}(window,google));
 	});
     </script>

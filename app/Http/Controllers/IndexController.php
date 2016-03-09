@@ -11,9 +11,4 @@ class IndexController extends Controller
 	{
 		return view('pages.welcome');
 	}
-
-	public function getMap()
-	{
-		return view('pages.map');
-	}
 }

@@ -23,8 +23,6 @@
 */
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/', "IndexController@index");
-	Route::get('/map', "IndexController@getMap");
-
+    Route::get('/', "AcademicController@create");
 	Route::resource('academics','AcademicController');
 });

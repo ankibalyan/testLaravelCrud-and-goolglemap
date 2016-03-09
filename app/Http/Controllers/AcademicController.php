@@ -19,7 +19,8 @@ class AcademicController extends Controller
      */
     public function index()
     {
-        //
+        $academics = Academics::all();
+        return view('pages.map')->withAcademics($academics);
     }
 
     /**
