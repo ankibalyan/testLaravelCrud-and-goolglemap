@@ -10,6 +10,8 @@ use App\Academics;
 
 use Session;
 
+use Input;
+
 class AcademicController extends Controller
 {
     /**
@@ -75,7 +77,7 @@ class AcademicController extends Controller
 
         Session::flash('success', 'Saved Successfully!');
 
-        return redirect()->route('academics');
+        return redirect()->route('academics.index');
     }
 
     /**
