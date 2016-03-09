@@ -75,7 +75,7 @@ class AcademicController extends Controller
 
         Session::flash('success', 'Saved Successfully!');
 
-        return redirect()->route('academics.show',$academic->id);
+        return redirect()->route('academics');
     }
 
     /**
