@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', "IndexController@index");
-Route::get('/map', "IndexController@getMap");
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -26,5 +23,8 @@ Route::get('/map', "IndexController@getMap");
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    Route::get('/', "IndexController@index");
+	Route::get('/map', "IndexController@getMap");
+
+	Route::resource('academics','AcademicController');
 });
